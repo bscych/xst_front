@@ -17,3 +17,10 @@ Route::get('/', function () {
 Route::get('foo', function () {
     return 'Hello World';
 });
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/sample/{which}', 'HomeController@sample');
+Route::get('/mockup/{which}', 'HomeController@mockup');
+
+Route::resource('site','SiteController');
