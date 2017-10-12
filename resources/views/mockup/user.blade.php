@@ -4,24 +4,24 @@
 <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Speaker</h1>
+                <h1 class="page-header">User</h1>
             </div>
         </div>
          <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <button type="button" class="btn btn-outline btn-default"><i class="fa fa-plus"></i> Add Speaker</button>
+                            <button type="button" class="btn btn-outline btn-default"><i class="fa fa-plus"></i> Add User</button>
                             
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                        <p>It is on Heroku, which is not able to retrieve data from Lilly Net, that means we have to add user's detials from</p>
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <td>No</td>
-                                        <th><h6>Speaker Name</h6></th>
-                                      
+                                        <th><h6>User Name</h6></th>
                                         <th><h6>Hospital / Pharmacy</h6></th>
                                         <td><h6>Web site / facebook<h6></td>
                                         <td><h6>Created Date<h6></td>

@@ -27,22 +27,19 @@
                                          <div class="form-group">
                                             <label>Type of items</label>
                                             <select class="form-control" id="type_of_items">
-                                                <option>PDF</option>
-                                                <option>PPT</option>
+                                                <option>PDF_PPT</option>
                                                 <option>Hyperlink</option>
                                             </select>
                                         </div>
 
 
-                                         <div class="form-group" id = "PDF">
+                                         <div class="form-group" id = "PDF_PPT">
                                             <label>PDF upload</label>
                                             <input type="file">
-                                        </div>
-                                        <div class="form-group" id =  "PPT">
-                                            <label>PPT upload</label>
+                                             <label>PPT upload</label>
                                             <input type="file">
                                         </div>
-                        
+                                        
                                         <div class="form-group" id = "Hyperlink">
                                             <label>Hyperlink </label>
                                             <input class="form-control" placeholder="Hyperlink">

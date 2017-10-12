@@ -110,6 +110,9 @@
                                 <li>
                                     <a href="/public/mockup/brand"> Brand</a>
                                 </li>
+                                <li>
+                                    <a href="/public/mockup/brandMapping"> Brands Mapping</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -124,6 +127,9 @@
                         </li>
                         <li>
                         <a href="/public/mockup/log"><i  class="fa fa-files-o"></i> User activity Log</a>
+                        </li>
+                        <li>
+                        <a href="/public/mockup/user"><i  class="fa fa-files-o"></i> User Management</a>
                         </li>
                     </ul>
                 </div>
@@ -165,7 +171,8 @@ $.when( $.ready ).then(function() {
 });
 
 function hideAll(){
- $("#PDF").hide();
+ $("#PDF_PPT").hide();
+  $("#PDF").hide();
  $("#PPT").hide();
  $("#Video").hide();
  $("#Hyperlink").hide();

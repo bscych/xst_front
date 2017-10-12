@@ -39,10 +39,6 @@
                                             <label>Name</label>
                                             <input class="form-control" placeholder="TA name">
                                         </div>
-                                         <div class="form-group">
-                                            <label>Brand ID from Lilly Play</label>
-                                            <input class="form-control" placeholder="Lilly Play Brand ID" value="683c86e9-f585-44c2-be8f-e29a8b0afc06">
-                                        </div>
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
