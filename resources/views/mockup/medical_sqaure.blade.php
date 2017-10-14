@@ -25,7 +25,7 @@
                                        
                                         <td><h6>TA<h6></td>
                                         <th><h6>Audience</h6></th>
-                                       
+                                        <td><h6>Created Date</h6></td>
                                         <th><h6>Actions</h6></th>
                                     </tr>
                                 </thead>
@@ -36,7 +36,7 @@
                                         <td>Resources</td>
                                         <td>Hospital</td>
                                         <td>HCP Speaker,Lilly SR</td>
-                                       
+                                        <td>2017-12-12 15:00:00</td>
                                         <td><a class="fa fa-edit" href="/public/mockup/medical_squareDetail"> edit </a></td>
                                     </tr>
                                     <tr class="odd gradeX">
@@ -45,7 +45,7 @@
                                         <td>Medical Connect</td>
                                         <td>Hospital</td>
                                         <td>HCP non Speaker</td>
-                                       
+                                        <td>2017-12-12 15:00:00</td>
                                         <td><a class="fa fa-edit" href="/public/mockup/medical_squareDetail"> edit </a></td>
                                     </tr>
                                     

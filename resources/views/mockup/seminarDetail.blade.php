@@ -47,11 +47,11 @@
                                 <div class="col-lg-6">
                                     <form role="form" lpformnum="2">
                                         <div class="form-group">
-                                            <label>Start Time</label>
+                                            <label>Start Date／Time</label>
                                             <input class="form-control" disable="" value="" placeholder="Start Time" >
                                         </div>
                                         <div class="form-group">
-                                            <label>End Time</label>
+                                            <label>End Date／Time</label>
                                             <input class="form-control" disable="" value="" placeholder="End Time" >
                                         </div>
                                         <div class="form-group">

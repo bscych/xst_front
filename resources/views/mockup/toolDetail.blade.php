@@ -24,13 +24,23 @@
                                             <input class="form-control" placeholder="Meeting Title">
                                         </div>
 
-                                         <div class="form-group">
+                                        <div class="form-group" id="type_of_items">
+                                            <label>Selects</label>
+                                            <select class="form-control">
+                                                <option>URL</option>
+                                                <option>WebSite</option>
+                                            </select>
+                                        </div>
+
+                                         <div class="form-group" id="URL">
                                             <label>Apple Store Download URL</label>
                                             <input class="form-control" placeholder="Apple Store Download URL">
-                                        </div>
-                                        <div class="form-group" >
                                             <label>Android Market Download URL</label>
                                             <input class="form-control" placeholder="Android Market Download URL">
+                                        </div>
+                                        <div class="form-group" id="WebSite" style="display: none;">
+                                            <label>WebSite URL</label>
+                                            <input class="form-control" placeholder="WebSite URL">
                                         </div>
                                       
                                     </form>

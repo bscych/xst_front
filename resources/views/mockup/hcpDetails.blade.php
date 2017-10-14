@@ -30,7 +30,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Email Address</label>
-                                            <input class="form-control" placeholder="email address">
+                                            <input class="form-control" placeholder="email address" disabled="disabled">
                                         </div>
                                         <div class="form-group">
                                             <label>Registration Code</label>
@@ -74,13 +74,13 @@
                                 <div class="col-lg-6">
                                     <form role="form" lpformnum="2">
                                         <div class="form-group">
-                                            <label>User Name</label>
-                                            <input class="form-control" disable="" value="" placeholder="User Name" >
+                                            <label>Full Name</label>
+                                            <input class="form-control" disable="" value="" placeholder="Full Name" >
                                         </div>
-                                        <div class="form-group">
+                                        <!--div class="form-group">
                                             <label>Mobile</label>
                                             <input class="form-control" disable="" value="" placeholder="Mobile optional" >
-                                        </div>
+                                        </div -->
                                         <div class="form-group">
                                             <label>Hospital Name</label>
                                             <input class="form-control" placeholder="Hospital Name">

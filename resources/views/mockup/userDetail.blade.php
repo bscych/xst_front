@@ -22,14 +22,14 @@
                                             <label>User Name</label>
                                             <input class="form-control" disable="" value="User Name">
                                         </div>
-                                        <div class="form-group">
+                                        <!--div class="form-group">
                                             <label>First Name</label>
                                             <input class="form-control" placeholder="First Name">
                                         </div>
                                         <div class="form-group">
                                             <label>Last Name</label>
                                             <input class="form-control" placeholder="Last Name">
-                                        </div>
+                                        </div-->
                                     
                                     </form>
                                 </div>

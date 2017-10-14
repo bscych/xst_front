@@ -38,7 +38,7 @@
                                             <label>Video ID</label>
                                             <input class="form-control" placeholder="Video ID">
                                         </div>
-                                        <div class="form-group" id = "Hyperlink">
+                                        <div class="form-group" id = "Hyperlink" style="display: none;">
                                             <label>Hyperlink </label>
                                             <input class="form-control" placeholder="Hyperlink">
                                         </div>

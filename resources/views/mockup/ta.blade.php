@@ -21,7 +21,7 @@
                                     <tr>
                                         <td>No</td>
                                         <th><h6>Name</h6></th>
-                                        
+                                        <th><h6>Created Date</h6></th>
                                         <th><h6>Actions</h6></th>
                                     </tr>
                                 </thead>
@@ -29,13 +29,13 @@
                                     <tr class="odd gradeX">
                                         <td>1</td>
                                         <td>Diabetes</td>
-                                       
+                                        <td>2017-12-12 15:00:00</td>
                                         <td><a class="fa fa-edit" href="/public/mockup/taDetail"> edit </a></td>
                                     </tr>
                                     <tr class="odd gradeX">
                                         <td>2</td>
                                         <td>Oncology</td>
-                                        
+                                        <td>2017-12-12 15:00:00</td>
                                         <td><a class="fa fa-edit" href="/public/mockup/taDetail"> edit </a></td>
                                     </tr>
                                     

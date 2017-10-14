@@ -22,6 +22,7 @@
                                         <td>No</td>
                                         <th><h6>Name</h6></th>
                                         <th><h6>Audience</h6></th>
+                                        <td><h6>Created Date</h6></td>
                                        <th><h6>Actions</h6></th>
                                     </tr>
                                 </thead>
@@ -29,18 +30,15 @@
                                     <tr class="odd gradeX">
                                         <td>1</td>
                                         <td>SSSSS</td>
-                                       
                                         <td>HCP Non Speaker</td>
-                                        
-                                       
+                                        <td>2017-12-12 15:00:00</td>
                                         <td><a class="fa fa-edit" href="/public/mockup/recommend_itemDetail"> edit </a></td>
                                     </tr>
                                     <tr class="odd gradeX">
                                         <td>2</td>
                                         <td>XXXXX</td>
-                                       
                                         <td>HCP Speaker</td>
-                                        
+                                        <td>2017-12-12 15:00:00</td>
                                         <td><a class="fa fa-edit" href="/public/mockup/recommend_itemDetail"> edit </a></td>
                                     </tr>
                                     

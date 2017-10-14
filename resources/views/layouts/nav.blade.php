@@ -162,7 +162,7 @@
 
                                             <script>
 $.when( $.ready ).then(function() {
-  hideAll();
+ 
   $("#type_of_items").change(function(){
    hideAll();
     var id = $("select").find("option:selected").text();
@@ -171,12 +171,13 @@ $.when( $.ready ).then(function() {
 });
 
 function hideAll(){
- $("#PDF_PPT").hide();
-  $("#PDF").hide();
- $("#PPT").hide();
- $("#Video").hide();
- $("#Hyperlink").hide();
-
+    $("#PDF_PPT").hide();
+    $("#PDF").hide();
+    $("#PPT").hide();
+    $("#Video").hide();
+    $("#Hyperlink").hide();
+    $("#WebSite").hide();
+    $("#URL").hide();
 }
 </script>
 </body>

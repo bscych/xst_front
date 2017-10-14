@@ -38,15 +38,15 @@
                                             <label>PDF upload</label>
                                             <input type="file">
                                         </div>
-                                        <div class="form-group" id =  "PPT">
+                                        <!--div class="form-group" id =  "PPT">
                                             <label>PPT upload</label>
                                             <input type="file">
-                                        </div>
-                                         <div class="form-group" id = "Video">
+                                        </div-->
+                                         <div class="form-group" id = "Video" style="display: none;">
                                             <label>Video ID </label>
                                             <input class="form-control" placeholder="Video ID">
                                         </div>
-                                        <div class="form-group" id = "Hyperlink">
+                                        <div class="form-group" id = "Hyperlink" style="display: none;">
                                             <label>Hyperlink </label>
                                             <input class="form-control" placeholder="Hyperlink">
                                         </div>
@@ -61,10 +61,10 @@
                                             <input type="file">
                                         </div>
                                        
-                                        <div class="form-group">
+                                        <!--div class="form-group">
                                             <label>Description</label>
                                             <textarea class="form-control" rows="6" ></textarea>
-                                        </div>
+                                        </div-->
                                        
 
                                         <div class="form-group">

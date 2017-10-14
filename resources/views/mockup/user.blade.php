@@ -39,7 +39,7 @@
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>DR. Zhang</td>
+                                        <td>C32398</td>
                                         <td>Contributor</td>
                                     
                                         <td>2018-12-12 15:30:00</td>
@@ -47,7 +47,7 @@
                                     </tr>
                                     <tr class="odd gradeX">
                                         <td>2</td>
-                                        <td>DR. Wang</td>
+                                        <td>V39240</td>
                                         <td>HCP manager</td>
                                         
                                         <td>2018-12-12 15:30:00</td>

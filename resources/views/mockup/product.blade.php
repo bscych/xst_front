@@ -23,7 +23,7 @@
                                         <th><h6>Product Title</h6></th>
                                         <th><h6>TA/Brand</h6></th>
                                         <th><h6>Audience</h6></th>
-                                        
+                                        <th><h6>Created Date</h6></th>
                                         <th><h6>Actions</h6></th>
                                     </tr>
                                 </thead>
@@ -33,7 +33,7 @@
                                         <td>Insulin</td>
                                         <td>Diabetes</td>
                                         <td>HCP</td>
-                                        
+                                        <td>2017-12-12 15:00:00</td>
                                         <td><a class="fa fa-edit" href="/public/mockup/productDetail"> edit </a></td>
                                     </tr>
                                     <tr class="odd gradeX">
@@ -41,7 +41,7 @@
                                         <td>Cialis</td>
                                         <td>ED</td>
                                         <td>HCP</td>
-                                       
+                                        <td>2017-12-12 15:00:00</td>
                                         <td><a class="fa fa-edit" href="/public/mockup/productDetail"> edit </a></td>
                                     </tr>
                                     
