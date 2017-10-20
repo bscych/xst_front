@@ -40,6 +40,12 @@
                                             <input class="form-control" placeholder="TA name">
                                         </div>
                                     </form>
+                                    <form role="form" lpformnum="1">
+                                        <div class="form-group">
+                                            <label>Brand Logo</label>
+                                            <input class="form-control" type="file">
+                                        </div>
+                                    </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                             </div>
