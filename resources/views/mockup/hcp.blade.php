@@ -15,6 +15,14 @@
                             <button type="button" class="btn btn-outline btn-default"><i class="glyphicon glyphicon-export"></i> Export HCPs</button>
                             <button type="button" class="btn btn-outline btn-default"><i class="glyphicon glyphicon-export"></i> Export Pharmacists</button>
                             <button type="button" class="btn btn-outline btn-default"><i class="glyphicon glyphicon-import"></i> Update HCPs</button>
+                            <div class="input-group custom-search-form pull-right col-lg-3">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

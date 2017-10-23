@@ -11,20 +11,27 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <!--button type="button" class="btn btn-outline btn-default"><i class="fa fa-plus"></i> Add User</button-->
-                            
+                            <button type="button" class="btn btn-outline btn-default"><i class="fa fa-plus"></i> Add User</button>
+                            <div class="input-group custom-search-form pull-right col-lg-4">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                         <p>how many login ways are there?</p>
-                        <p>Roles:
+                        <!--p>Roles:
                             <ul>
                                 <li>Contributor</li>
                                 <li>HCP manager</li>
                                 <li>Medical square uploader</li>
                                 <li>Admin</li>
                             </ul>
-                        </p>
+                        </p-->
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
