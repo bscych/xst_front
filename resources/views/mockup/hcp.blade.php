@@ -11,7 +11,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <button type="button" class="btn btn-outline btn-default"><i class="glyphicon glyphicon-export"></i> Export Activity Logo</button>
+                            <button type="button" class="btn btn-outline btn-default"><i class="glyphicon glyphicon-export"></i> Export Activity Log</button>
                             <button type="button" class="btn btn-outline btn-default"><i class="glyphicon glyphicon-export"></i> Export HCPs</button>
                             <button type="button" class="btn btn-outline btn-default"><i class="glyphicon glyphicon-export"></i> Export Pharmacists</button>
                             <button type="button" class="btn btn-outline btn-default"><i class="glyphicon glyphicon-import"></i> Update HCPs</button>

@@ -88,18 +88,7 @@
                             <!-- /input-group -->
                         </li-->
                         <li>
-                            <a href="/public/mockup/speaker"><i class="glyphicon glyphicon-user"></i> Speaker</a>
-                        </li>
-                        <li>
-                            <a href="/public/mockup/hcp"><i class="fa fa-users"></i> HCP</a>
-                            
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="/public/mockup/seminar"><i class="glyphicon glyphicon-hd-video"></i> Live Web Seminar</a>
-                        </li>
-                        <li>
-                            <a href="/public/mockup/product"><i class="fa fa-barcode"></i> Lilly Product</a>
+                        <a href="/public/mockup/user"><i  class="fa fa-files-o"></i> User Management</a>
                         </li>
                         <li>
                             <a href="#"><i class="glyphicon glyphicon-copyright-mark"></i> TA/Brand<span class="fa arrow"></span></a>
@@ -117,7 +106,23 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="/public/mockup/speaker"><i class="glyphicon glyphicon-user"></i> Speaker</a>
+                        </li>
+                       
+                        <li>
+                            <a href="/public/mockup/seminar"><i class="glyphicon glyphicon-hd-video"></i> Live Web Seminar</a>
+                        </li>
+                        <li>
+                            <a href="/public/mockup/product"><i class="fa fa-barcode"></i> Lilly Product</a>
+                        </li>
+                        
+                        <li>
                             <a href="/public/mockup/medical_sqaure"><i class="fa fa-square"></i> Medical Square</a>
+                        </li>
+                         <li>
+                            <a href="/public/mockup/hcp"><i class="fa fa-users"></i> HCP</a>
+                            
+                            <!-- /.nav-second-level -->
                         </li>
                         <li >
                             <a href="/public/mockup/recommended_item"><i class="fa fa-photo"></i> Recommended Item</a>
@@ -128,9 +133,7 @@
                         <li>
                         <a href="/public/mockup/log"><i  class="fa fa-files-o"></i> User activity Log</a>
                         </li>
-                        <li>
-                        <a href="/public/mockup/user"><i  class="fa fa-files-o"></i> User Management</a>
-                        </li>
+                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
