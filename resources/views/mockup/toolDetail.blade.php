@@ -25,7 +25,7 @@
                                         </div>
 
                                         <div class="form-group" id="type_of_items">
-                                            <label>Selects</label>
+                                            <label>Type of item</label>
                                             <select class="form-control">
                                                 <option>URL</option>
                                                 <option>WebSite</option>
