@@ -14,13 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('foo', function () {
-    return 'Hello World';
-});
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/sample/{which}', 'HomeController@sample');
-Route::get('/mockup/{which}', 'HomeController@mockup');
 
-Route::resource('site','SiteController');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/courseCategory', 'CourseCategoryController');
+
+Route::resource('/paymentCategory', 'PaymentCategoryController');
+
+Route::resource('/school', 'SchoolController');
+
+Route::resource('/course', 'CourseController');
+
+Route::resource('/classRoom', 'ClassRoomController');
+
+Route::resource('/student', 'StudentController');
+
+Route::resource('/teacher', 'TeacherController');
