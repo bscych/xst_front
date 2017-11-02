@@ -24,6 +24,19 @@
                                             <input class="form-control" placeholder="Meeting Title">
                                         </div>
 
+                                        <div class="form-group">
+                                            <label>Category</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">Resources
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Medical Connect
+                                            </label>
+                                             <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Video
+                                            </label>
+                                        </div>
+
                                          <div class="form-group">
                                             <label>Type of items</label>
                                             <select class="form-control" id="type_of_items">
@@ -44,16 +57,7 @@
                                             <label>Hyperlink </label>
                                             <input class="form-control" placeholder="Hyperlink">
                                         </div>
-                                       <div class="form-group">
-                                            <label>Category</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">Resources
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Medical Connect
-                                            </label>
-                                           
-                                        </div>
+                                       
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
