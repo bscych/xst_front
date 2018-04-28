@@ -34,3 +34,7 @@ Route::resource('/student', 'StudentController');
 Route::resource('/teacher', 'TeacherController');
 
 Route::resource('/user', 'UserController');
+
+Route::resource('/account', 'AccountController');
+
+// Route::get('/account/{student_id}', 'AccountController@addDetails');

@@ -8,10 +8,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
-use \app\User;
-use Silber\Bouncer\Database\HasRolesAndAbilities;
+use App\Models\AccountDetails;
 
-class UserController extends Controller
+class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +19,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return View::make('user.index')->with('users',User::all());
+        $student_id = Input::get('student_id');
+        $accountDetails = AccountDetails::where('student_id',$student_id)->get();
+        
+       return View::make('account.index')->with('accountDetails',$accountDetails);
     }
 
     /**
@@ -30,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return View::make('user.create');
+        //
     }
 
     /**
