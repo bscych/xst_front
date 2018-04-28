@@ -6,11 +6,11 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-book"></i> 学生管理</h2>
+                <h2><i class="glyphicon glyphicon-book"></i> 教师管理</h2>
             </div>
             <div class="box-content">
                 <p>
-                    <a class="btn btn-primary btn-lg" href="{{ URL::to('/student/create') }}">新增学生</a>      
+                    <a class="btn btn-primary btn-lg" href="{{ URL::to('/teacher/create') }}">新增教师</a>      
                 </p>
             </div>
 
@@ -19,7 +19,7 @@
                 <table class="table table-striped table-bordered bootstrap-datatable responsive">
                     <thead>
                         <tr>
-                            <th>学号</th>
+                            <th>序号</th>
                             <th>姓名</th>
                             <th>电话</th>
                             <th>联系人电话</th>
@@ -28,13 +28,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($students as $model)
+                        @foreach ($teachers as $model)
                         <tr>
-                            <td>{{$model->code}} </td>
+                            <td>{{$model->id}} </td>
                             <td>{{ $model->name }}</td>
                             <td>{{ $model->mobile }}</td>
-                            <td>{{ $model->mobile }}</td>
-                            <td>{{ $model->primaryschool}}</td>
+                            <td>{{ $model->email }}</td>
+                            <td>{{ $model->school_id}}</td>
                         
                             <td class="center">
                                 <a class="btn btn-info" href="{{ URL::to('student/' . $model->id . '/edit') }}">

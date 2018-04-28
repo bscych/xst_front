@@ -6,10 +6,10 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class=""></i> 创建课程</h2>
+                <h2><i class=""></i> 创建用户</h2>
             </div>
             <div class="box-content">
-                <form role="form" method="POST" action="{{ url('/course') }}">
+                <form role="form" method="POST" action="{{ url('/user') }}">
 
                     {!! csrf_field() !!}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

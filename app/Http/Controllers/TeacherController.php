@@ -8,10 +8,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
-use \app\User;
-use Silber\Bouncer\Database\HasRolesAndAbilities;
+use App\Models\Teacher;
 
-class UserController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +19,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return View::make('user.index')->with('users',User::all());
+        $teachers =  Teacher::all();
+        return View::make('teacher.index')->with('teachers',$teachers);
     }
 
     /**
@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return View::make('user.create');
+        return View::make('teacher.create');
     }
 
     /**

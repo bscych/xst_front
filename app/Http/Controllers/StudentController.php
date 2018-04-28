@@ -65,6 +65,7 @@ class StudentController extends Controller
             $student->primaryschool = Input::get('primaryschool');
             $user = Auth::user();
             $student-> operator= Auth::id();
+            $student->school_id = $user->school_id;
             $student->save();
 
             Session::flash('message', 'Successfully created nerd!');
