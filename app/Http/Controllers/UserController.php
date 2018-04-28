@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use User;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use \app\User;
 use Silber\Bouncer\Database\HasRolesAndAbilities;
 
 class UserController extends Controller

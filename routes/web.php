@@ -32,3 +32,5 @@ Route::resource('/classRoom', 'ClassRoomController');
 Route::resource('/student', 'StudentController');
 
 Route::resource('/teacher', 'TeacherController');
+
+Route::resource('/user', 'UserController');
