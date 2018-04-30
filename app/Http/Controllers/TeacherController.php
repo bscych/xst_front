@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Teacher;
 
 class TeacherController extends Controller
@@ -41,7 +42,33 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $rules = array(
+            'name' => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('teacher/create')
+                            ->withErrors($validator);
+            
+        } else {
+         
+            $teacher = new Teacher;
+            $teacher->name = Input::get('name');
+            $teacher->password = Input::get('password');
+            $teacher->birthday = Input::get('birthday');
+            $teacher->email = Input::get('email');
+            //$teacher->wechat = Input::get('wechat');
+            $teacher->role = 'Teacher';
+            $user = Auth::user();
+           // $teacher-> operator= Auth::id();
+            $teacher->school_id = $user->school_id;
+            $teacher->save();
+
+            Session::flash('message', 'Successfully created nerd!');
+            return Redirect::to('teacher');
+        }
     }
 
     /**
