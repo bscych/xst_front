@@ -135,14 +135,17 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">菜单</li>
-                        <li class="accordion">
+                        <!--li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-plus"></i><span> 数据字典管理</span></a>
                             <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{{ url('/constantCategory') }}">数据字典管理</a></li>
                                 <li><a href="{{ url('/courseCategory') }}">课程类别管理</a></li>
                                 <li><a href="{{ url('/paymentCategory') }}">交费类别管理</a></li>
                             </ul>
+                        </li-->
+                         <li><a class="ajax-link" href="{{ url('/constantCategory') }}"><i class="glyphicon glyphicon-plus"></i><span> 数据字典管理</span></a>
                         </li>
-                        <li><a class="ajax-link" href="{{ url('/plan') }}"><i class="glyphicon glyphicon-home"></i><span> 课程计划管理</span></a>
+                        <li><a class="ajax-link" href="{{ url('/plan') }}"><i class="glyphicon glyphicon-home"></i><span> 班级管理</span></a>
                         </li>
                         <li><a class="ajax-link" href="{{ url('/school') }}"><i class="glyphicon glyphicon-eye-open"></i><span>校区管理</span></a>
                         </li>

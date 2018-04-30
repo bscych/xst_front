@@ -41,14 +41,14 @@
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     编辑
                                 </a>
-                                  <a class="btn btn-info" href="{{ URL::to('account?student_id='. $model->id) }}">
+                                  <!--a class="btn btn-info" href="{{ URL::to('account?student_id='. $model->id) }}">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     账户管理
                                 </a>
                                  <a class="btn btn-info" href="{{ URL::to('account/create?student_id='. $model->id) }}">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     交费
-                                </a>
+                                </a-->
                                 <a class="btn btn-danger" href="{{ URL::to('student/' . $model->id) }}">
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     删除

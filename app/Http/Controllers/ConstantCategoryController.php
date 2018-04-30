@@ -8,10 +8,12 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Teacher;
+use \App\Models\Constant;
+use \App\Models\ConstantCategory;
 
-class TeacherController extends Controller
+class ConstantCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +22,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers =  Teacher::all();
-        return View::make('teacher.index')->with('teachers',$teachers);
+        return View::make('constant.constant_category_index')->with('models',ConstantCategory::all());
     }
 
     /**
@@ -31,7 +32,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return View::make('teacher.create');
+        return View::make('constant.constant_category_create');
     }
 
     /**
@@ -42,32 +43,25 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-         $rules = array(
-            'name' => 'required',
+        $rules = array(
+            'name' => 'required|string|max:255|unique:constant_categories'
         );
         $validator = Validator::make(Input::all(), $rules);
 
         // process the login
         if ($validator->fails()) {
-            return Redirect::to('teacher/create')
+            return Redirect::to('constantCategory/create')
                             ->withErrors($validator);
             
         } else {
          
-            $teacher = new Teacher;
-            $teacher->name = Input::get('name');
-            $teacher->password = Input::get('password');
-            $teacher->birthday = Input::get('birthday');
-            $teacher->email = Input::get('email');
-            //$teacher->wechat = Input::get('wechat');
-            $teacher->role = 'Teacher';
-            $user = Auth::user();
-           // $teacher-> operator= Auth::id();
-            $teacher->school_id = $user->school_id;
-            $teacher->save();
+            $constantCategory = new ConstantCategory;
+            $constantCategory->name = Input::get('name');
+            
+            $constantCategory->save();
 
             Session::flash('message', 'Successfully created nerd!');
-            return Redirect::to('teacher');
+            return Redirect::to('constantCategory');
         }
     }
 

@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('/constant', 'ConstantController');
+
+Route::resource('/constantCategory', 'ConstantCategoryController');
+
 Route::resource('/courseCategory', 'CourseCategoryController');
 
 Route::resource('/paymentCategory', 'PaymentCategoryController');
@@ -36,5 +40,7 @@ Route::resource('/teacher', 'TeacherController');
 Route::resource('/user', 'UserController');
 
 Route::resource('/account', 'AccountController');
+
+Route::resource('/plan', 'PlanController');
 
 // Route::get('/account/{student_id}', 'AccountController@addDetails');

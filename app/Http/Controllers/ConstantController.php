@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Teacher;
+use \App\Models\Constant;
+use \App\Models\ConstantCategory;
 
-class TeacherController extends Controller
+
+class ConstantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +23,10 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers =  Teacher::all();
-        return View::make('teacher.index')->with('teachers',$teachers);
+        $constant_category_id = Input::get('constant_category_id');
+        $constantCategory = ConstantCategory::where('id',$constant_category_id)->first();
+        $constants = Constant::where('constant_category_id',$constant_category_id)->get();
+        return View::make('constant.constant_index')->with('models',$constants)->with('constantCategory',$constantCategory);
     }
 
     /**
@@ -31,7 +36,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return View::make('teacher.create');
+        return View::make('constant.constant_create')->with('constant_category_id',Input::get('constant_category_id'));
     }
 
     /**
@@ -42,32 +47,27 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-         $rules = array(
-            'name' => 'required',
+        $rules = array(
+            'value' => 'required|string|max:255'
         );
         $validator = Validator::make(Input::all(), $rules);
 
         // process the login
+        $constant_category_id = Input::get('constant_category_id');
         if ($validator->fails()) {
-            return Redirect::to('teacher/create')
+            return Redirect::to('constant/create')
                             ->withErrors($validator);
             
         } else {
          
-            $teacher = new Teacher;
-            $teacher->name = Input::get('name');
-            $teacher->password = Input::get('password');
-            $teacher->birthday = Input::get('birthday');
-            $teacher->email = Input::get('email');
-            //$teacher->wechat = Input::get('wechat');
-            $teacher->role = 'Teacher';
-            $user = Auth::user();
-           // $teacher-> operator= Auth::id();
-            $teacher->school_id = $user->school_id;
-            $teacher->save();
+            $constant = new Constant;
+            $constant->value = Input::get('value');
+            $constant->constant_category_id = $constant_category_id;
+            $constant->label_name = ' ';
+            $constant->save();
 
             Session::flash('message', 'Successfully created nerd!');
-            return Redirect::to('teacher');
+            return Redirect::to('constant?constant_category_id='.$constant_category_id);
         }
     }
 

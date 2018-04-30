@@ -8,10 +8,15 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Teacher;
+use \App\Models\Plan;
+use \App\Models\Course;
+use \App\Models\Teacher;
+use \App\Models\ClassRoom;
+use \App\Models\Constant;
 
-class TeacherController extends Controller
+class PlanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +25,10 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers =  Teacher::all();
-        return View::make('teacher.index')->with('teachers',$teachers);
+        $plans = Plan::all();
+        
+        return view('plan.index',['models'=>$plans]);
+        
     }
 
     /**
@@ -31,7 +38,10 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return View::make('teacher.create');
+        $teachers = Teacher::all();
+        $classrooms = ClassRoom::all();
+        $courses = Course::all();
+        return View::make('plan.create',['teachers'=>$teachers,'classrooms'=>$classrooms,'courses'=>$courses]);
     }
 
     /**
@@ -42,32 +52,36 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-         $rules = array(
-            'name' => 'required',
+        $rules = array(
+            'name' => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
 
-        // process the login
         if ($validator->fails()) {
-            return Redirect::to('teacher/create')
+            return Redirect::to('plan/create')
                             ->withErrors($validator);
-            
+          
         } else {
-         
-            $teacher = new Teacher;
-            $teacher->name = Input::get('name');
-            $teacher->password = Input::get('password');
-            $teacher->birthday = Input::get('birthday');
-            $teacher->email = Input::get('email');
-            //$teacher->wechat = Input::get('wechat');
-            $teacher->role = 'Teacher';
+            // school
+            $plan = new Plan;
+            $plan->code = Input::get('code');
+            $plan->name = Input::get('name');
+            $plan->description = Input::get('description');
+            $plan->course_id = Input::get('course_id');
+            $plan->teacher = Input::get('teacher');
+            $plan->supervisor = Input::get('supervisor');
+            $plan->classroom_id = Input::get('classroom_id');
             $user = Auth::user();
-           // $teacher-> operator= Auth::id();
-            $teacher->school_id = $user->school_id;
-            $teacher->save();
+            $plan->school_id = $user->school_id;
+            $plan->numberOfPeriod = Input::get('numberOfPeriod');
+            $plan->numberOfStudent = Input::get('numberOfStudent');
+            $plan->start_at = Input::get('start_at');
+            $plan->end_at = Input::get('end_at');
+            $plan->save();
 
+            // redirect
             Session::flash('message', 'Successfully created nerd!');
-            return Redirect::to('teacher');
+            return Redirect::to('plan');
         }
     }
 
