@@ -18,8 +18,8 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->double('price', 8, 2);
             $table->integer('duration');
-            $table->unsignedInteger('courseCategory_id');
-            $table->foreign('courseCategory_id')->references('id')->on('course_categories');
+            $table->unsignedInteger('constant_id');
+            $table->foreign('constant_id')->references('id')->on('constants');
             $table->timestamps();
         });
     }

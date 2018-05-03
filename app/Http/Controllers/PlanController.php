@@ -25,8 +25,15 @@ class PlanController extends Controller
      */
     public function index()
     {
-        $plans = Plan::all();
-        
+       // $plans = Plan::all();
+        $plans = DB::table('plans')
+            ->join('courses', 'plans.course_id', '=', 'courses.id')
+            ->join('teachers', 'plans.teacher', '=', 'teachers.id')
+            ->join('teachers', 'plans.supervisor', '=', 'teachers.id')
+            ->join('class_rooms', 'plans.classroom_id', '=', 'class_rooms.id')
+            ->join('schools', 'plans.school_id', '=', 'schools.id')
+            ->select('plans.code', DB::raw('plans.name as plan_name'), DB::raw('courses.name as course_name'),DB::raw('teachers.name as teacher_name'),DB::raw('teachers.name as supervisor_name'),DB::raw('class_rooms.name as classroom_name'),DB::raw('schools.name as school_name'),'plans.numberOfPeriod','plans.numberOfStudent','plans.start_at','plans.end_at')
+            ->get();
         return view('plan.index',['models'=>$plans]);
         
     }

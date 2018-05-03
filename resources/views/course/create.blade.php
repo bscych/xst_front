@@ -34,7 +34,7 @@
                         <label class="control-label">课程类别 ： </label>
                         <select class="form-control" name="courseCategory_id" >
                                     @foreach($courseCategories as $courseCategory)
-                                    <option value="{{$courseCategory->id}}">{{$courseCategory->name}}</option>
+                                    <option value="{{$courseCategory->id}}">{{$courseCategory->value}}</option>
                                     @endforeach
                         </select>
                     </div>

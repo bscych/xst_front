@@ -34,13 +34,13 @@
                         @foreach ($models as $model)
                         <tr>
                             <td>{{$model->code}} </td>
-                            <td>{{ $model->name }}</td>
-                            <td>{{ $model->course_id }}</td>
-                            <td>{{ $model->teacher }}</td>
-                            <td>{{ $model->supervisor }}</td>
+                            <td>{{ $model->plan_name }}</td>
+                            <td>{{ $model->course_name }}</td>
+                            <td>{{ $model->teacher_name }}</td>
+                            <td>{{ $model->supervisor_name }}</td>
                             <td>{{ $model->start_at.'-'.$model->end_at}}</td>
                             <td>{{ $model->start_at.'-'.$model->end_at}}</td>
-                             <td>{{ $model->classroom_id}}</td>
+                             <td>{{ $model->classroom_name}}</td>
                             <td class="center">
                                 <a class="btn btn-info" href="{{ URL::to('plan/' . $model->id . '/edit') }}">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>

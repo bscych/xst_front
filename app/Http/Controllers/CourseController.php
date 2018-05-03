@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use \App\Models\Course;
-use \App\Models\CourseCategory;
+use \App\Models\Constant;
 use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
@@ -22,8 +22,8 @@ class CourseController extends Controller
     public function index()
     {
           $course = DB::table('courses')
-                ->join('course_categories','courseCategory_id','=','course_categories.id')
-                ->select('courses.id','courses.name','courses.price','courses.duration','course_categories.name as courseCategoryName')
+                ->join('constants','courses.constant_id','=','constants.id')
+                ->select('courses.id','courses.name','courses.price','courses.duration','constants.value as courseCategoryName')
                 ->get();
         return  View::make('course.index')->with('courses',$course);
     }
@@ -35,7 +35,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-         return View::make('course.create')->with('courseCategories',CourseCategory::all());
+         return View::make('course.create')->with('courseCategories',Constant::where('constant_category_id',2)->get());
     }
 
     /**
@@ -63,7 +63,7 @@ class CourseController extends Controller
             $course->name = Input::get('name');
             $course->price = Input::get('price');
             $course->duration = Input::get('duration');
-            $course->courseCategory_id = Input::get('courseCategory_id');
+            $course->constant_id = Input::get('courseCategory_id');
             $course->save();
 
             Session::flash('message', 'Successfully created nerd!');
@@ -92,7 +92,7 @@ class CourseController extends Controller
     {
          $model = Course::find($id);
        
-       return view('course.edit',['model'=>$model,'courseCategories'=>CourseCategory::all()]);
+       //return view('course.edit',['model'=>$model,'courseCategories'=>CourseCategory::all()]);
     }
 
     /**

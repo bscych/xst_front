@@ -21,6 +21,15 @@ class CreateSchoolsTable extends Migration {
             $table->string('city')->nullable();
             $table->timestamps();
         });
+        
+        Schema::create('classrooms', function (Blueprint $table) {
+           $table->increments('id');
+             $table->string('code');
+            $table->string('name');
+            $table->unsignedInteger('school_id');
+            $table->foreign('school_id')->references('id')->on('schools');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -30,6 +39,7 @@ class CreateSchoolsTable extends Migration {
      */
     public function down() {
         Schema::dropIfExists('schools');
+        Schema::dropIfExists('classrooms');
     }
 
 }

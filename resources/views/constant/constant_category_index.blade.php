@@ -9,9 +9,9 @@
                 <h2><i class="glyphicon glyphicon-book"></i> 数据字典管理</h2>
             </div>
             <div class="box-content">
-                <!--p>
+                <p>
                     <a class="btn btn-primary btn-lg" href="{{ URL::to('/constantCategory/create') }}">创建新数据字典</a>      
-                </p-->
+                </p>
             </div>
 
 
