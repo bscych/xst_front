@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use \App\Models\Student;
-use \App\Models\Account;
-use \App\Models\CpntactPerson;
+use \App\Models\Userinfo;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
@@ -55,16 +54,20 @@ class StudentController extends Controller
             
         } else {
          
-            $student = new Student;
-            $student->name = Input::get('name');
-            $student->code = Input::get('code');
-            $student->mobile = Input::get('mobile');
-            $student->email = Input::get('email');
-            $student->wechat = Input::get('wechat');
-            $student->qq = Input::get('qq');
-            $student->primaryschool = Input::get('primaryschool');
+            $userinfo = new UserInfo;
+            $userinfo->name = Input::get('name');
+            $userinfo->mobile = Input::get('mobile');
+            $userinfo->wechat = Input::get('wechat');
+            $userinfo->qq = Input::get('qq');
             $user = Auth::user();
-            $student-> operator= Auth::id();
+            $userinfo-> operator= Auth::id();
+            
+            $student = new Student;
+            $student->code = Input::get('code');
+            $student->comments = Input::get('comments');
+            
+            $student->primaryschool = Input::get('primaryschool');
+            
             $student->school_id = $user->school_id;
             $student->save();
 
