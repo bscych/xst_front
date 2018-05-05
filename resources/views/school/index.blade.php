@@ -46,6 +46,10 @@
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     编辑
                                 </a>
+                                <a class="btn btn-info" href="{{ URL::to('school/' . $model->id . '/edit') }}">
+                                    <i class="glyphicon glyphicon-edit icon-white"></i>
+                                    指定管理员
+                                </a>
                                 <a class="btn btn-danger" href="{{ URL::to('school/' . $model->id) }}">
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     删除

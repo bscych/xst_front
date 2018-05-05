@@ -30,7 +30,7 @@
 
                     </div>
                     
-                     <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                     <div class="form-group{{ $errors->has('courseCategory_id') ? ' has-error' : '' }}">
                         <label class="control-label">课程类别 ： </label>
                         <select class="form-control" name="courseCategory_id" >
                                     @foreach($courseCategories as $courseCategory)

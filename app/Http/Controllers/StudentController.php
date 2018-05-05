@@ -56,10 +56,11 @@ class StudentController extends Controller
          
             $userinfo = new UserInfo;
             $userinfo->name = Input::get('name');
+            $userinfo->birthday = Input::get('birthday');
             $userinfo->mobile = Input::get('mobile');
             $userinfo->wechat = Input::get('wechat');
             $userinfo->qq = Input::get('qq');
-            $user = Auth::user();
+           
             $userinfo-> operator= Auth::id();
             
             $student = new Student;

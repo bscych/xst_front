@@ -71,6 +71,8 @@ class CreateBouncerTables extends Migration
                   ->references('id')->on(Models::table('abilities'))
                   ->onUpdate('cascade')->onDelete('cascade');
         });
+        
+        
     }
 
     /**

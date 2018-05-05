@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use \app\User;
-use Silber\Bouncer\Database\HasRolesAndAbilities;
+use App\Models\Userinfo;
 
 class UserController extends Controller
 {
@@ -41,7 +43,45 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          $rules = array(
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('user/create')
+                            ->withErrors($validator);
+            
+        } else {
+         
+            $userinfo = new Userinfo;
+            $userinfo->mobile = Input::get('mobile');
+            $userinfo->birthday = Input::get('birthday');
+            $userinfo->wechat = Input::get('wechat');
+            $userinfo->qq = Input::get('qq');
+            $userinfo->operator = Auth::user()->id;
+            $userinfo->save();
+            
+            $user = new User;
+            $user->name = Input::get('name');
+            $user->email = Input::get('email');
+            $user->password = bcrypt(Input::get('password'));
+           
+            $user->save();
+            
+            
+            
+            DB::table('user_userinfo')->insert([
+                'user_id'=>$user->id,
+                'userinfo_id'=>$userinfo->id
+            ]);
+
+            Session::flash('message', 'Successfully created nerd!');
+            return Redirect::to('user');
+        }
     }
 
     /**

@@ -13,30 +13,36 @@
 
                     {!! csrf_field() !!}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        <label class="control-label">课程名称 ： </label>
+                        <label class="control-label">用户名 ： </label>
                         <input type="text" class="form-control" name="name" value="{{ old('name') }}">   
 
                     </div>
 
-                    <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
-                        <label class="control-label">课程单价 ： </label>
-                        <input type="text" class="form-control" name="price" value="{{ old('price') }}">   
-
-                    </div>
-
-                    <div class="form-group{{ $errors->has('duration') ? ' has-error' : '' }}">
-                        <label class="control-label">单课时长（分钟） ： </label>
-                        <input type="text" class="form-control" name="duration" value="{{ old('duration') }}">   
+                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label class="control-label">邮件 ： </label>
+                        <input type="text" class="form-control" name="email" value="{{ old('email') }}">   
 
                     </div>
                     
-                     <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                        <label class="control-label">课程类别 ： </label>
-                        <select class="form-control" name="courseCategory_id" >
-                                    @foreach($courseCategories as $courseCategory)
-                                    <option value="{{$courseCategory->id}}">{{$courseCategory->name}}</option>
-                                    @endforeach
-                        </select>
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <label class="control-label">密码 ： </label>
+                        <input type="password" class="form-control" name="password" value="{{ old('password') }}">   
+
+                    </div>
+
+                    <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                        <label class="control-label">mobile ： </label>
+                        <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}">   
+                    </div>
+                    
+                    <div class="form-group{{ $errors->has('wechat') ? ' has-error' : '' }}">
+                        <label class="control-label">wechat ： </label>
+                        <input type="text" class="form-control" name="wechat" value="{{ old('wechat') }}">   
+                    </div>
+                    
+                     <div class="form-group{{ $errors->has('qq') ? ' has-error' : '' }}">
+                        <label class="control-label">QQ ： </label>
+                        <input type="text" class="form-control" name="qq" value="{{ old('qq') }}">   
                     </div>
                     
                     <div class="form-group">

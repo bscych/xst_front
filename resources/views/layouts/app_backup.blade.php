@@ -145,7 +145,16 @@
                         </li-->
                          <li><a class="ajax-link" href="{{ url('/constantCategory') }}"><i class="glyphicon glyphicon-plus"></i><span> 数据字典管理</span></a>
                         </li>
-                        <li><a class="ajax-link" href="{{ url('/plan') }}"><i class="glyphicon glyphicon-home"></i><span> 班级管理</span></a>
+                        <!--li><a class="ajax-link" href="{{ url('/plan') }}"><i class="glyphicon glyphicon-home"></i><span> 班级管理</span></a>
+                        </li-->
+                        
+                         <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-plus"></i><span> 班级管理</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{{ url('/plan') }}">班级管理</a></li>
+                                <li><a href="{{ url('/') }}">统计管理</a></li>
+                                <li><a href="{{ url('/') }}">管理</a></li>
+                            </ul>
                         </li>
                         <li><a class="ajax-link" href="{{ url('/school') }}"><i class="glyphicon glyphicon-eye-open"></i><span>校区管理</span></a>
                         </li>
