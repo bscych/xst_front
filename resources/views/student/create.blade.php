@@ -29,27 +29,35 @@
                         <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}">   
 
                     </div>
-                    
-                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label class="control-label">电子邮箱/家庭住址 ： </label>
-                         <input type="text" class="form-control" name="email" value="{{ old('email') }}"> 
+
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label class="control-label">电子邮箱 ： </label>
+                        <input type="text" class="form-control" name="email" value="{{ old('email') }}"> 
                     </div>
-                    
-                     <div class="form-group{{ $errors->has('wechat') ? ' has-error' : '' }}">
+
+                    <div id="datetimepicker" class="input-append date form-group{{ $errors->has('birthday') ? ' has-error' : '' }}">
+                        <label class="control-label">生日 ： </label>
+                        <input type="text" lass="form-control" name="birthday" value="{{ old('birthday') }}"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+
+                    <div class="form-group{{ $errors->has('wechat') ? ' has-error' : '' }}">
                         <label class="control-label">微信 ： </label>
-                         <input type="text" class="form-control" name="wechat" value="{{ old('wechat') }}"> 
+                        <input type="text" class="form-control" name="wechat" value="{{ old('wechat') }}"> 
                     </div>
-                    
-                     <div class="form-group{{ $errors->has('qq') ? ' has-error' : '' }}">
-                        <label class="control-label">QQ ： </label>
-                         <input type="text" class="form-control" name="qq" value="{{ old('qq') }}"> 
+
+                    <div class="form-group{{ $errors->has('comments') ? ' has-error' : '' }}">
+                        <label class="control-label">备注信息 ： </label>
+                        <textarea class="autogrow" class="form-control" name="comments" value="{{ old('comments') }}"></textarea>
                     </div>
-                    
+
                     <div class="form-group{{ $errors->has('primaryschool') ? ' has-error' : '' }}">
                         <label class="control-label">就读学校 ： </label>
-                         <input type="text" class="form-control" name="primaryschool" value="{{ old('primaryschool') }}"> 
+                        <input type="text" class="form-control" name="primaryschool" value="{{ old('primaryschool') }}"> 
                     </div>
-                    
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">
                             <i class="fa fa-btn fa-user"></i>提交

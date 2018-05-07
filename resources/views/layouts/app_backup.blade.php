@@ -29,6 +29,10 @@
     <link href="{{ asset('css/jquery.iphone.toggle.css')}}" rel='stylesheet'>
     <link href="{{ asset('css/uploadify.css')}}" rel='stylesheet'>
     <link href="{{ asset('css/animate.min.css')}}" rel='stylesheet'>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+    
 </head>
 <body>
   
@@ -143,9 +147,18 @@
                                 <li><a href="{{ url('/paymentCategory') }}">交费类别管理</a></li>
                             </ul>
                         </li-->
-                         <li><a class="ajax-link" href="{{ url('/constantCategory') }}"><i class="glyphicon glyphicon-plus"></i><span> 数据字典管理</span></a>
+                        <li><a class="ajax-link" href="{{ url('/constantCategory') }}"><i class="glyphicon glyphicon-plus"></i><span> 数据字典管理</span></a>
                         </li>
-                        <li><a class="ajax-link" href="{{ url('/plan') }}"><i class="glyphicon glyphicon-home"></i><span> 班级管理</span></a>
+                        <!--li><a class="ajax-link" href="{{ url('/plan') }}"><i class="glyphicon glyphicon-home"></i><span> 班级管理</span></a>
+                        </li-->
+                        
+                         <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-plus"></i><span> 班级管理</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{{ url('/plan') }}">班级管理</a></li>
+                                <li><a href="{{ url('/') }}">统计管理</a></li>
+                                <li><a href="{{ url('/') }}">管理</a></li>
+                            </ul>
                         </li>
                         <li><a class="ajax-link" href="{{ url('/school') }}"><i class="glyphicon glyphicon-eye-open"></i><span>校区管理</span></a>
                         </li>
@@ -249,6 +262,20 @@
     
     <!-- application script for Charisma demo -->
     <script src="{{ asset('js/charisma.js') }}"></script>
+    
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+    </script>
    
+<script type="text/javascript">
+      $('#datetimepicker').datetimepicker({
+        format: 'dd/MM/yyyy',
+        language: 'CH',
+        pickTime: false
+      });
+    </script>
 </body>
 </html>

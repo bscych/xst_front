@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
 use \App\Models\Plan;
 use \App\Models\Course;
 use \App\Models\Teacher;
@@ -26,14 +27,32 @@ class PlanController extends Controller
     public function index()
     {
        // $plans = Plan::all();
+        /*
         $plans = DB::table('plans')
             ->join('courses', 'plans.course_id', '=', 'courses.id')
             ->join('teachers', 'plans.teacher', '=', 'teachers.id')
             ->join('teachers', 'plans.supervisor', '=', 'teachers.id')
-            ->join('class_rooms', 'plans.classroom_id', '=', 'class_rooms.id')
+            ->join('classrooms', 'plans.classroom_id', '=', 'class_rooms.id')
             ->join('schools', 'plans.school_id', '=', 'schools.id')
             ->select('plans.code', DB::raw('plans.name as plan_name'), DB::raw('courses.name as course_name'),DB::raw('teachers.name as teacher_name'),DB::raw('teachers.name as supervisor_name'),DB::raw('class_rooms.name as classroom_name'),DB::raw('schools.name as school_name'),'plans.numberOfPeriod','plans.numberOfStudent','plans.start_at','plans.end_at')
             ->get();
+        */
+        $plan = new \stdClass;
+        
+        $plan->id=1;
+        $plan->code='code1';
+        $plan->plan_name='plan names';
+        $plan->course_name='数学';
+        $plan->teacher_name = '张老师';
+        $plan->supervisor_name='刘老师';
+        $plan->classroom_name='C1';
+        $plan->school_name='学校1';
+        $plan->numberOfPeriod=10;
+        $plan->numberOfStudent=20;
+        $plan->start_at=2018-05-01;
+        $plan->end_at=2019-05-01;
+        $plans = collect([$plan]);
+        
         return view('plan.index',['models'=>$plans]);
         
     }

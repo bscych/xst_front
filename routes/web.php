@@ -44,3 +44,6 @@ Route::resource('/account', 'AccountController');
 Route::resource('/plan', 'PlanController');
 
 // Route::get('/account/{student_id}', 'AccountController@addDetails');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 use \App\Models\School;
 
 
@@ -31,7 +33,35 @@ class SchoolController extends Controller
      */
     public function create()
     {
-        return View::make('school.create');
+        $school_userinfos = DB::table('school_userinfo')->get();
+        $ids = collect([]);
+       foreach($school_userinfos as $school_userinfo){
+           $ids->push($school_userinfo->userinfo_id);
+       }
+        
+        $users = DB::table('users')->select('users.id','users.name','user_userinfo.userinfo_id')
+                ->join('user_userinfo','users.id','=','user_userinfo.user_id')
+                ->whereNotIn('user_userinfo.userinfo_id', $ids)
+                ->get();
+                
+                /*
+                ->whereNotExists(function ($query) {
+                $query->select(DB::raw('user_userinfo.user_id'))
+                      ->from('user_userinfo')->join('school_userinfo', 'user_userinfo.userinfo_id', '=', 'school_userinfo.userinfo_id')
+                      ;
+            })
+            ->get();
+            */
+            /*
+            DB::table('users')
+        ->join('user_userinfo', function ($join) {
+            $join->on('users.id', '=', 'user_userinfo.userinfo_id');
+        })->join('school_userinfo',function($join){
+             $join->on('user_userinfo.id', '=', 'school_userinfo.userinfo_id');
+        })
+        ->get();
+        */
+        return View::make('school.create')->with('users',$users);
     }
 
     /**
@@ -60,7 +90,10 @@ class SchoolController extends Controller
             $school->homepage = Input::get('homepage');
             $school->city = Input::get('city');
             $school->save();
-
+            
+            $userinfo_id = Input::get('userinfo_id');
+             
+            DB::table('school_userinfo')->insert(['school_id'=>$school->id,'userinfo_id'=>$userinfo_id]);
             // redirect
             Session::flash('message', 'Successfully created nerd!');
             return Redirect::to('school');
@@ -136,6 +169,28 @@ class SchoolController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+    
+     /**
+     * to_assign_manager the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function to_assign_manager($id)
+    {
+        //
+    }
+    
+    /**
+     * assignManager the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function assignManager($id)
     {
         //
     }

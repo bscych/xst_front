@@ -40,6 +40,15 @@
                         <input type="text" class="form-control" name="city" value="{{ old('city') }}">   
 
                     </div>
+                    
+                    <div class="form-group{{ $errors->has('userinfo_id') ? ' has-error' : '' }}">
+                        <label class="control-label">管理员 ： </label>
+                        <select class="form-control" name="userinfo_id" >
+                                    @foreach($users as $user)
+                                    <option value="{{$user->userinfo_id}}">{{$user->name}}</option>
+                                    @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">
                             <i class="fa fa-btn fa-user"></i>提交

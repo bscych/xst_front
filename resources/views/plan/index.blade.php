@@ -46,6 +46,14 @@
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     编辑
                                 </a>
+                                <a class="btn btn-info" href="{{ URL::to('plan/' . $model->id . '/edit') }}">
+                                    <i class="glyphicon glyphicon-edit icon-white"></i>
+                                    插班
+                                </a>
+                                <a class="btn btn-info" href="{{ URL::to('plan/' . $model->id . '/edit') }}">
+                                    <i class="glyphicon glyphicon-edit icon-white"></i>
+                                    点名
+                                </a>
                                 <a class="btn btn-danger" href="{{ URL::to('plan/' . $model->id) }}">
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     删除

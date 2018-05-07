@@ -6,7 +6,7 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-book"></i> 管理</h2>
+                <h2><i class="glyphicon glyphicon-book"></i> 用户管理</h2>
             </div>
             <div class="box-content">
                 <p>
@@ -22,9 +22,7 @@
                             <th>编号</th>
                             <th>用户名</th>
                             <th>电子邮箱</th>
-                            <th>生日</th>
-                            <th>角色</th>
-                            <th>所属校区</th>
+                            
                             <th>操作</th>
                         </tr>
                     </thead>
@@ -34,10 +32,7 @@
                             <td>{{$model->id}} </td>
                             <td>{{ $model->name }}</td>
                             <td>{{ $model->email }}</td>
-                            <td>{{ $model->birthday }}</td>
-                            <td>{{ $model->role }}</td>
-                            <td>{{ $model->school_id }}</td>
-                    
+                           
                             <td class="center">
                                 <a class="btn btn-info" href="{{ URL::to('course/' . $model->id . '/edit') }}">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>

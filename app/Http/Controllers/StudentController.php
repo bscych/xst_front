@@ -21,7 +21,12 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return View::make('student.index')->with('students',Student::all());
+         $students = DB::table('students')
+                ->join('userinfos','userinfos.id','=','students.userinfo_id')
+                //->join('schools','students.school_id','=','schools.id')
+                ->select('students.code','userinfos.id','students.comments','students.primaryschool')
+                ->get();
+        return View::make('student.index')->with('students',$students);
     }
 
     /**
@@ -55,20 +60,24 @@ class StudentController extends Controller
         } else {
          
             $userinfo = new UserInfo;
-            $userinfo->name = Input::get('name');
+           
+            $userinfo->birthday = Input::get('birthday');
             $userinfo->mobile = Input::get('mobile');
             $userinfo->wechat = Input::get('wechat');
             $userinfo->qq = Input::get('qq');
-            $user = Auth::user();
             $userinfo-> operator= Auth::id();
+            $userinfo->save();
             
             $student = new Student;
+            $student->name = Input::get('name');
             $student->code = Input::get('code');
             $student->comments = Input::get('comments');
             
             $student->primaryschool = Input::get('primaryschool');
+            $student->userinfo_id = $userinfo->id;
             
-            $student->school_id = $user->school_id;
+            $school_id = DB::table('school_userinfo')->select('school_userinfo.school_id')->join('user_userinfo','user_userinfo.userinfo_id','=','school_userinfo.userinfo_id')->where('user_userinfo.user_id','=',Auth::id())->first();
+            $student->school_id =$school_id->school_id;
             $student->save();
 
             Session::flash('message', 'Successfully created nerd!');

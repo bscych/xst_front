@@ -73,13 +73,14 @@ class CreatessysTable extends Migration {
 
         Schema::create('userinfos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            //$table->string('name');
             $table->string('mobile')->nullable();
             $table->date('birthday')->nullable();
             $table->string('wechat')->nullable();
             $table->string('qq')->nullable();
             $table->unsignedInteger('operator');
             $table->foreign('operator')->references('id')->on('users');
+            $table->boolean('is_deleted')->default(false);
             $table->timestamps();
         });
 
@@ -89,9 +90,17 @@ class CreatessysTable extends Migration {
             $table->unsignedInteger('userinfo_id');
             $table->foreign('userinfo_id')->references('id')->on('userinfos');
         });
+        
+        Schema::create('school_userinfo', function (Blueprint $table) {
+            $table->unsignedInteger('school_id');
+            $table->foreign('school_id')->references('id')->on('schools');
+            $table->unsignedInteger('userinfo_id');
+            $table->foreign('userinfo_id')->references('id')->on('userinfos');
+        });
 
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->string('code');
             $table->string('comments');
             $table->string('primaryschool')->nullable();
@@ -125,7 +134,7 @@ class CreatessysTable extends Migration {
             // $table->unsignedInteger('school_id');
             //$table->unsignedInteger('role');
         });
-
+/*
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code');
@@ -177,6 +186,7 @@ class CreatessysTable extends Migration {
             $table->foreign('student_status')->references('id')->on('constants');
             $table->timestamps();
         });
+        */
 
         DB::table('constant_categories')->insert([
             'name' => '交费类型',
